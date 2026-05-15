@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Agendamento</title>
+  <style>
+    body { font-family: Arial; text-align: center; }
+    .horario {
+      display: inline-block;
+      margin: 5px;
+      padding: 10px;
+      border: 1px solid #333;
+      cursor: pointer;
+    }
+    .ocupado {
+      background-color: red;
+      color: white;
+      cursor: not-allowed;
+    }
+    .disponivel {
+      background-color: lightgreen;
+    }
+  </style>
+</head>
+<body>
+
+<h2>📅 Sistema de Agendamento</h2>
+
+<input type="date" id="dataSelecionada">
+<div id="horarios"></div>
+
+<script>
+const horariosPadrao = [
+  "09:00", "10:00", "11:00",
+  "13:00", "14:00", "15:00"
+];
+
+// Carregar agendamentos do navegador
+function getAgendamentos() {
+  return JSON.parse(localStorage.getItem("agendamentos")) || [];
+}
+
+// Salvar agendamento
+function salvarAgendamento(data, hora) {
+  let agendamentos = getAgendamentos();
+  agendamentos.push({ data, hora });
+  localStorage.setItem("agendamentos", JSON.stringify(agendamentos));
+}
+
+// Renderizar horários
+function renderizarHorarios(data) {
+  const container = document.getElementById("horarios");
+  container.innerHTML = "";
+
+  const agendamentos = getAgendamentos();
+
+  horariosPadrao.forEach(hora => {
+    const div = document.createElement("div");
+    div.classList.add("horario");
+
+    const ocupado = agendamentos.find(a => a.data === data && a.hora === hora);
+
+    if (ocupado) {
+      div.classList.add("ocupado");
+      div.innerText = hora + " (ocupado)";
+    } else {
+      div.classList.add("disponivel");
+      div.innerText = hora;
+
+      div.onclick = () => {
+        salvarAgendamento(data, hora);
+        alert("Agendado com sucesso!");
+        renderizarHorarios(data);
+      };
+    }
+
+    container.appendChild(div);
+  });
+}
+
+// Evento ao escolher data
+document.getElementById("dataSelecionada").addEventListener("change", (e) => {
+  const data = e.target.value;
+  renderizarHorarios(data);
+});
+</script>
+
+</body>
+</html>

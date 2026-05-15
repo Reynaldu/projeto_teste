@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body >
+
+    <div class="container">
+        <h1>Agende seu serviço </h1>
+        <form id="form-agendamento">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="servico">Serviço:</label>
+            <select id="servico" name="servico" required>
+                <option value="Pé + Mão">Pé + Mão </option>
+                <option value="Pé">Pé </option>
+                <option value="Mão">Mão </option>
+                <option value="Spá dos pés  e massagem">Spá dos Pés + Massagem </option>
+                <option value="Postiça Realista">Postiça Realista </option>
+                <option value=" Unha de Gel Mold f1 ou Gel na Tips"> Unha de Gel (Mold f1 ou Gel na Tips) </option>
+                <option value="Manutenção Unhas de Gel">Manutenção Unhas de Gel </option>
+                <option value="Banho de Gel">Banho de Gel  </option>
+                <option value="Reposição Unha Quebrada">Reposição Unha Quebrada(cada Unha)  </option>
+                <option value=" Unha Encapsulada">Unha Encapsulada  </option>
+            </select>
+
+            <label for="data">Data do Agendamento:</label>
+            <input type="date" id="data" name="data" required>
+
+            <label for="hora">Hora do Agendamento:</label>
+            <input type="time" id="hora" name="hora" required>
+
+            <label for="whatsapp">Seu WhatsApp:</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(99) 99999-9999" required>
+
+            <button type="submit">Agendar</button>
+        </form>
+          <div class="aviso"> 
+             <p class="dias">Dias de Funcionamento <br>
+            Terça a Sábado </p>
+          </div>
+     
+    </div>
+
+    
+    <script src="menu.js"></script>
+</body>
+</html>
