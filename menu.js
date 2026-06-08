@@ -22,3 +22,31 @@ document.getElementById("form-agendamento").addEventListener("submit", function(
         alert("Por favor, preencha todos os campos.");
     }
 });
+
+const imagens = [
+
+"img1.jpg",
+"img2.jpg",
+"img3.jpg"
+
+];
+
+let indice = 0;
+
+const imagem = document.getElementById("imagem");
+
+function trocarImagem(){
+
+indice++;
+
+if(indice >= imagens.length){
+
+indice = 0;
+
+}
+
+imagem.src = imagens[indice];
+
+}
+
+setInterval(trocarImagem,3000);
