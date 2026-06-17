@@ -50,3 +50,12 @@ imagem.src = imagens[indice];
 }
 
 setInterval(trocarImagem,3000);
+
+
+
+window.onload = function() {
+    setTimeout(function() {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("site").style.display = "block";
+    }, 2500); // 2,5 segundos
+};

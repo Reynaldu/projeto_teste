@@ -28,6 +28,26 @@ p{
   
 }
 
+#loading {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#loading img{
+    width: 250px;
+    animation: aparecer 1.5s ease-in-out;
+}
+
+#site {
+    display: none;
+}
+
 .img1{    
     width: 50px;
     position: relative;
@@ -224,10 +244,44 @@ transform:translateX(calc(-50%));
     background-color: #555;
 }
 
+
+/*sobre*/
+#sobre1{
+   background-color: #f3fcfc;
+}
+.sobre{
+    margin-top: 80px;
+}
+.sobre p{
+    font-size: 20px;
+}
+
+.sobre h1{
+    font-size: 40px;
+    color: #602d6d;
+}
+
+.img-sobre img{
+    width: 400px;
+    height: 480px;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px #f1ead4 ;
+    margin-top: 100px;
+   
+}
+
+.linha {
+    border: none;
+    height: 1px;
+    background-color: #e7daad;
+    margin:15px 0;
+}
+
 /*especialaidades*/
 section.especialidades{
     padding: 40px 4%;
-    background-color: #ebd4f1;;
+     background-color: #f1ead4;
+    
 }
 
 section.especialidades .flex{
@@ -385,8 +439,22 @@ footer.especialidades .flex{
     .txt-topo-site p{
         font-size: 20px;
     }
+
+    .img-sobre img{
+        width:200px;
+       height: 260px;
+       margin-top: 0;
+       margin-bottom: 20px;
+    }
     
- 
+    .sobre h1{
+       text-align: center;
+       font-size: 25px;
+       font-style: oblique;
+    }
+    .sobre p{
+        font-size: 16px;
+    }
     .especialidades .especialidades-box h3{
     font-size: 20px;
     ;
